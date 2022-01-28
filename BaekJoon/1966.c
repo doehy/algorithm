@@ -58,9 +58,13 @@ int main()
     int number = 0;//출력될 숫자
     int temp;//변하는 index를 계속 저장해줄 값
     int max;//최댓값
-    int qwer; //디큐값 저장할 변수
+    int qwer; //deque값 저장할 변수
     for (int i = 1; i <= n; i++)//테스트 케이스 수만큼 반복
     {
+        for (int z = 0; z < SIZE; z++)//매번 테스트 할 때마다 배열을 초기화 해준다.
+        {
+            Q.elem[z] = 0;
+        }
         scanf("%d %d", &num, &m);
         for (int j = 0; j < num; j++)//문서의 개수 만큼 입력받고 큐에 집어넣는다.
         {
@@ -76,32 +80,39 @@ int main()
         //일단 지금 이것은 무한루프를 도는데 조건이 맞다면 나가는 조건이고 front는 0으로 초기화 해놓았고 디큐는 일단 먼저 출력하고 front를 증가하는 구조로 설정해놓았다.
         while (1)
         {
-            if (Q.elem[Q.front] != max && Q.front == m)//최댓값이 아닌데 찾는 인덱스야
+            if (Q.elem[Q.front] != max)
             {
-                qwer = dequeue(&Q);
-                enqueue(&Q, qwer);
-                m = Q.rear;
+                if (Q.front == m) {
+                    qwer = dequeue(&Q);
+                    enqueue(&Q, qwer);
+                    m = Q.rear;
+                }
+                else {
+                    qwer = dequeue(&Q);
+                    enqueue(&Q, qwer);
+                }
             }
-            else if (Q.elem[Q.front] != max && Q.front == m)//최댓값이 아닌데 찾는 인덱스도 아님
+            else
             {
-                qwer = dequeue(&Q);
-                enqueue(&Q, qwer);
+
             }
-            else if (Q.elem[Q.front] == max && Q.front != m) //최댓값인데 찾는 인덱스가 아니야
+           
+            if (Q.elem[Q.front] == max && Q.front != m) //최댓값인데 찾는 인덱스가 아니야
             {
                 dequeue(&Q);
                 max = Q.elem[Q.front];
-                for (int q= Q.elem[Q.front]; q <= Q.elem[Q.rear]; q++)//최대값을 찾는다.
+                for (int q = Q.elem[Q.front + 1]; q <= Q.elem[Q.rear]; q++)//최대값을 찾는다.
                 {
                     if (Q.elem[q] > max)//최대값보다 크다면 갱신해준다
                         max = Q.elem[q];
                 }
+                number++;
             }
 
-            else if (Q.elem[Q.front] == max && Q.front == m)//최댓값인데 찾는 인덱스야
+            if (Q.elem[Q.front] == max && Q.front == m)//최댓값인데 찾는 인덱스야
             {
                 number++;
-                printf("%d", Q.elem[Q.front]);
+                printf("%d", number);
                 break;
             }
         }
