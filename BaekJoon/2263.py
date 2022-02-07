@@ -22,7 +22,9 @@ def calc(in_order,postorder,iStart,pStart,sz):
     rightSize = sz - leftSize -1
     left = calc(in_order,postorder,iStart,pStart ,leftSize)
     right = calc(in_order,postorder,rIdx+1 ,pStart+leftSize,rightSize)
-    return Node(root,left,right)
+    tree = Node(root,left,right)
+    print(tree.value,tree.left,tree.right)
+    return tree
 
 def prePrint(tree):
     if tree == None:
