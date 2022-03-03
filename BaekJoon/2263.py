@@ -23,7 +23,6 @@ def calc(in_order,postorder,iStart,pStart,sz):
     left = calc(in_order,postorder,iStart,pStart ,leftSize)
     right = calc(in_order,postorder,rIdx+1 ,pStart+leftSize,rightSize)
     tree = Node(root,left,right)
-    print(tree.value,tree.left,tree.right)
     return tree
 
 def prePrint(tree):

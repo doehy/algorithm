@@ -1,19 +1,19 @@
-N,K = map(int,input().split())
+def isSurprise(n):
+    for i in range(0,len(n)-1):
+        tmp = list()
+        for j in range(len(n)-(i+1)):
+            s = n[j] + n[j+i+1]
+            if s in tmp:
+                return False
+            tmp.append(s)
 
-num = 0
-lst = list()
-for i in range(N):
-    lst.append(int(input()))
-out = 0
-i = 0
-result = 0
-for i in range(N):
-    result = lst[result]
-    num+=1
-    if result == K:
-        print(num)
-        out+=1
+    return True
+
+while True:
+    n = input()
+    if n == '*':
         break
-
-if out == 0:
-    print("-1")
+    if isSurprise(n)==True:  
+        print(f"{n} is surprising.") 
+    if isSurprise(n)==False:
+        print(f"{n} is NOT surprising.")
