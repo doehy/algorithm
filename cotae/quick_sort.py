@@ -1,4 +1,8 @@
-array = [5,7,9,0,3,1,6,2,4,8]
+import time
+
+num_list= [32,512 , 128, 131072, 64, 524288, 2048, 32768, 8192, 16384,4096 , 65536,256 , 262144,1024 , 1048576]
+
+start = time.time()
 
 def quick_sort(array,start,end):
     if start >= end: #원소가 1개인 경우 종료
@@ -21,5 +25,6 @@ def quick_sort(array,start,end):
     quick_sort(array,start,right-1)
     quick_sort(array,right+1,end)
 
-quick_sort(array,0,len(array)-1)
-print(array)
+quick_sort(num_list,0,len(num_list)-1)
+print(num_list)
+print("time :", time.time()-start)

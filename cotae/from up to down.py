@@ -5,7 +5,7 @@ num_list= []
 for _ in range(n):
     num_list.append(int(input()))
 
-num = len(num_list)
+num = len(num_list) 
 
 for i in range(0,num-1):
     for j in range(i+1,num):
