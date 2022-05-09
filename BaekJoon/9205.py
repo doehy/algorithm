@@ -1,18 +1,17 @@
+from collections import deque
+
 t = int(input())
 
-def dfs(graph):
-    flag = 0
-    for i in range(len(graph)):
-        if i == len(graph) - 1:
-            break
-        if abs(graph[i+1][0] - graph[i][0]) + abs(graph[i+1][1] - graph[i][1]) > 1000:
-            flag = 1
-    return "sad" if flag == 1 else "happy"
+def bfs(graph):
+    queue = deque()
+    
+
+    
 
 for _ in range(t):
     n = int(input())
-    graph=[]
-    for _ in range(n+2):
-        graph.append(list(map(int,input().split())))
-    print(dfs(graph))
-
+    h_x,h_y = map(int,input().split())
+    graph = [list(map(int,input().split())) for _ in range(n)]
+    festival_x,festival_y = map(int,input().split())
+    graph.append(festival_x,festival_y)
+    
