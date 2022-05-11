@@ -1,19 +1,20 @@
-def isSurprise(n):
-    for i in range(0,len(n)-1):
-        tmp = list()
-        for j in range(len(n)-(i+1)):
-            s = n[j] + n[j+i+1]
-            if s in tmp:
-                return False
-            tmp.append(s)
+def check(string):
+    flag = 0
+    for i in range(1,len(string)):
+        list = []
+        for j in range(0,len(string)-i):
+            if string[j:j+1] + string[j+i:j+i+1] not in list:
+                list.append(string[j:j+1] + string[j+i:j+i+1]) 
+            else:
+                flag = 1
+    if flag == 1:
+        print(string+" is NOT surprising.")
+    else:
+        print(string+" is surprising.")
 
-    return True
 
-while True:
+while(1):
     n = input()
     if n == '*':
-        break
-    if isSurprise(n)==True:  
-        print(f"{n} is surprising.") 
-    if isSurprise(n)==False:
-        print(f"{n} is NOT surprising.")
+        break    
+    check(n)
