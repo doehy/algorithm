@@ -33,4 +33,4 @@ visited = [[0] * m for _ in range(n)]
 
 bfs(0,0)
 
-print(visited[n-1][m-1]-2)
+print(visited[n-1][m-1]-1)
