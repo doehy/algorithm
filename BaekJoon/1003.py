@@ -1,14 +1,15 @@
+from distutils.command.build_scripts import first_line_re
+
+
 def fibo(n):
-    memo[0]=0
-    memo[1]=1
+    if n < 2:
+        return n #일단 0번째 수열과 1번쨰 수열은 0과 1로 고정되어있으니 일단 이렇게 써준다.
+    else:
+        fibo(n) = fibo(n-1) + fibo(n-2)
 
-    if n<2:
-        return memo(n)
-    for i in range(2,n+1):
-        memo[i] = memo[i-2] + memo[i-1]
 
-    return memo[n]
+
+
 
 n = int(input())
-memo = [0 for i in range(n+1)]
 print(fibo(n))

@@ -19,20 +19,26 @@ for i in range(n):
             if graph[i][j] == graph[i][j+1]:
                 max_result += 1
                 j += 1
+                result = max(result,max_result)
             else:
                 j = temp_j
-                result = max(result,max_result)
                 max_result = 1
                 break
+            if j == (n -2):
+                j = temp_j
+                max_result = 1
         while (i+1) < n:
             if graph[i][j] == graph[i+1][j]:
                 max_result += 1
                 i += 1
+                result = max(result,max_result)
             else:
                 i = temp_i
-                result = max(result,max_result)
                 max_result = 1
                 break
+            if i == n-2:
+                i = temp_i
+                max_result = 1
 
 for i in range(n):
     for j in range(n):
@@ -46,6 +52,7 @@ for i in range(n):
                     if k == 0 : #밑으로 확인
                         graph[i][j],graph[nx][ny] = graph[nx][ny],graph[i][j]
                         for p in range(2):
+                            max_result = 1
                             j = 0 # 0열부터 확인해야하니 0을 넣어놓는 것이다.
                             while (j+1) < n:
                                 if graph[i+p][j] == graph[i+p][j+1]:
@@ -67,11 +74,13 @@ for i in range(n):
                                 i += 1
                                 max_result = 1
                                 continue
+                        max_result = 1
                         i = temp_i 
                         graph[i][j],graph[nx][ny] = graph[nx][ny],graph[i][j] # 다시 제자리로 돌려준다.
                     if k == 1: #옆으로 확인
                         graph[i][j],graph[nx][ny] = graph[nx][ny],graph[i][j]
                         for p in range(2):
+                            max_result = 1
                             i = 0 # 0열부터 확인해야하니 0을 넣어놓는 것이다.
                             while (i+1) < n:
                                 if graph[i][j+p] == graph[i+1][j+p]:
@@ -93,7 +102,11 @@ for i in range(n):
                                 max_result = 1
                                 j += 1
                                 continue
+                        j = temp_j
                         graph[i][j],graph[nx][ny] = graph[nx][ny],graph[i][j]
+                        max_result = 1
+
+
 
 print(result)
 
