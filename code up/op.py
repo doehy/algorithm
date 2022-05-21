@@ -11,12 +11,10 @@ for i in tong:
     else:
         for j in range(len(num)):
             if num[j] + i <= 10:
-                print("이건 더해지는 것",i)
                 num[j] += i
                 flag = 1
                 break
         if flag == 0:
-            print("이건 추가되는 것",i)
             num.append(i)
 
 print(num)
