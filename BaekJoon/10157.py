@@ -43,10 +43,13 @@ def check(x,y):
                 graph[x-1][y] = final
                 x -= 1
             start = 0
-    if p==0 and q==0:
-        print(0)
+    if number == 1:
+        print(1,1)
     else:
-        print(p+1,q+1)
+        if p==0 and q==0:
+            print(0)
+        else:
+            print(p+1,q+1)
 
 check(0,0)
 
