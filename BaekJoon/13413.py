@@ -37,4 +37,4 @@ for _ in range(t):
 
 
 for x in data:
-    print(x,end=' ')
+    print(x)

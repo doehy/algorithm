@@ -1,6 +1,6 @@
 import sys
-input = sys.stdin.readline
 sys.setrecursionlimit(10**9)
+input = sys.stdin.readline
 
 n = int(input())
 
@@ -13,8 +13,7 @@ for _ in range(n-1):
     tree[a].append(b)
     tree[b].append(a)
 
-def dfs(start, tree, parents):
-    # 연결된 노드들부터 parents[i]의 부모가 없으면 부모 설정 해주고,dfs 돌린다.
+def dfs(start,tree,parents):
     for i in tree[start]:
         if parents[i] == 0:
             parents[i] = start
@@ -24,9 +23,3 @@ dfs(1,tree,parents)
 
 for i in range(2,n+1):
     print(parents[i])
-
-                
-        
-
-
-

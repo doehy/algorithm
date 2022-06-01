@@ -5,7 +5,7 @@ def fibo(n):
     global i
     if n == 0:
         print(text*i+"\"재귀함수가 뭔가요?\"")
-        print(text*i+"재귀함수는 자기 자신을 호출하는 함수라네")
+        print(text*i+"\"재귀함수는 자기 자신을 호출하는 함수라네\"")
         print(text*i+"라고 답변하였지.")
         return 
     if n > 0:
