@@ -22,7 +22,6 @@ def solve(i,j,visited):
                 if visited[nx][ny] == 0:        
                     visited[nx][ny] = 2
                     q.append((nx,ny))
-    
 for i in range(1):
     for j in range(m):
         if data[i][j] == '0' and visited[i][j] != 2:
