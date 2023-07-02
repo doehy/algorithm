@@ -1,6 +1,5 @@
 from math import gcd
 def solve():
-    
     s,e = map(int,input().split())
     arr = [[0] * (e) for _ in range(e)]
     answer = 0
