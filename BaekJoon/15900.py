@@ -1,7 +1,6 @@
 import sys
 input = sys.stdin.readline
 n = int(input())
-
 data = [[] for _ in range(n+1)]
 
 for i in range(n-1):
