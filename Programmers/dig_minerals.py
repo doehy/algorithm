@@ -1,7 +1,7 @@
 def dfs(picks,minerals,fatigue,m_idx,p_count,total):
     global count
     if m_idx >= len(minerals) or p_count == total: # 광물을 다 캤다면 곡괭이 다씀
-        count = min(count,fatigue)        
+        count = min(count,fatigue)       
         return
     for i in range(len(picks)): # 곡괭이 갯수만큼 반복을 한다.
         if picks[i] > 0:
