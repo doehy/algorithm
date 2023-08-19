@@ -1,7 +1,6 @@
 from itertools import combinations
 
 N = input() #입력 받기
-
 def thcheck(num,cnt):
     global min_result
     global max_result
