@@ -34,7 +34,6 @@ def backTracking(count):
                 graph[i][j] =1
                 backTracking(count + 1)
                 graph[i][j] =0
-
 answer = 0
 byrus_count = 0
 wall_count = 0
