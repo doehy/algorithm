@@ -9,7 +9,7 @@ def dfs(a):
 		if visit[next]:
 			continue
 		visit[next] = True
-		
+	
 		for i in tree[next]:
 			if not visit[i]:
 				queue.append(i)
