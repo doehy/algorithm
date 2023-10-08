@@ -28,9 +28,8 @@ def bfs(i,j):
                 visited[x][ny] = visited[x][y] + 1
                 queue.append((x,ny))
 
-                
+           
 visited = [[0] * m for _ in range(n)]
-
 bfs(0,0)
 
 print(visited[n-1][m-1]-1)
