@@ -1,6 +1,5 @@
 import sys
 input = sys.stdin.readline
-
 N = int(input())
 nums = [] 
 num = 0 
